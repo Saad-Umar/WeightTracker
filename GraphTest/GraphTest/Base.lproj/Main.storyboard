@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="GraphTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fiU-jz-m1a" customClass="MyCustomView" customModule="MyCustomView">
+                                <rect key="frame" x="16" y="280" width="568" height="300"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="startColor">
+                                        <color key="value" red="0.90630702554744524" green="0.92535355839416056" blue="0.90984260948905105" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="endColor">
+                                        <color key="value" red="0.0" green="0.49019607843137253" blue="0.8784313725490196" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="fiU-jz-m1a" secondAttribute="trailing" constant="16" id="OH2-Gr-LCM"/>
+                            <constraint firstItem="fiU-jz-m1a" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="Uub-PP-Idy"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="fiU-jz-m1a" secondAttribute="bottom" constant="20" id="hQo-zi-5vM"/>
+                            <constraint firstItem="fiU-jz-m1a" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="16" id="lyt-RT-MrU"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="fiU-jz-m1a" secondAttribute="bottom" constant="8" id="uOQ-lI-Dvm"/>
+                            <constraint firstItem="fiU-jz-m1a" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="16" id="wdh-sM-HZE"/>
+                            <constraint firstAttribute="trailing" secondItem="fiU-jz-m1a" secondAttribute="trailing" constant="16" id="xMp-68-u7K"/>
+                            <constraint firstItem="fiU-jz-m1a" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="260" id="yET-sd-xCM"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="OH2-Gr-LCM"/>
+                                <exclude reference="Uub-PP-Idy"/>
+                                <exclude reference="lyt-RT-MrU"/>
+                                <exclude reference="uOQ-lI-Dvm"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact">
+                            <mask key="constraints">
+                                <include reference="OH2-Gr-LCM"/>
+                                <include reference="Uub-PP-Idy"/>
+                                <include reference="lyt-RT-MrU"/>
+                                <exclude reference="wdh-sM-HZE"/>
+                                <exclude reference="xMp-68-u7K"/>
+                                <exclude reference="yET-sd-xCM"/>
+                                <exclude reference="hQo-zi-5vM"/>
+                                <include reference="uOQ-lI-Dvm"/>
+                            </mask>
+                        </variation>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="140" y="136"/>
+        </scene>
+    </scenes>
+</document>
