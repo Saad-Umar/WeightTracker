@@ -9,10 +9,19 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    @IBOutlet var graphView: GraphView!
 
+    
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
+        println(NSDate())
+        //graphView.dayMap = [1:[1,2,3]]
+        //graphView.setNeedsDisplay()
+        
     }
 
     override func didReceiveMemoryWarning() {

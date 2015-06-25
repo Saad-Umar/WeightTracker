@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>06E63918-DAD8-4EB2-8E7C-8CAB09FD0053</string>
+	<key>IDESourceControlProjectName</key>
+	<string>GraphTest</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>DF97BD2D48B05CDAF53752E592E0F64AAF279CBD</key>
+		<string>https://github.com/Saad-Umar/WeightTracker.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>GraphTest/GraphTest.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>DF97BD2D48B05CDAF53752E592E0F64AAF279CBD</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/Saad-Umar/WeightTracker.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>DF97BD2D48B05CDAF53752E592E0F64AAF279CBD</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>DF97BD2D48B05CDAF53752E592E0F64AAF279CBD</string>
+			<key>IDESourceControlWCCName</key>
+			<string>WeightTracker</string>
+		</dict>
+	</array>
+</dict>
+</plist>

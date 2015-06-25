@@ -1,16 +1,17 @@
 //
-//  MyCustomView.swift
+//  GraphView.swift
 //  GraphTest
 //
-//  Created by PanaCloud on 6/23/15.
+//  Created by PanaCloud on 6/24/15.
 //  Copyright (c) 2015 PanaCloud. All rights reserved.
 //
 
 import UIKit
 
-@IBDesignable class MyCustomView: UIView {
+class GraphView: UIView {
+    var graphPoints:[Int] = [4,6,7,10,8,4,11,5,1,1,1,5,5,66,77,9,8,11,4,6,7,10,8,44,11,5,1,1,1,5,5,6,7,9,8,11,4,6,7,10,8,4,11,5,1,1,1,5,5,6,7,9,8,11,4,6,7,10,8,4,11,5,1,1,1,5,5,6,7,9,8,11,4,6,7,10,8,4,11,5,1,1,1,5,5,66,77,9,8,11,4,6,7,10,8,44,11,5,1,1,1,5,5,6,7,9,8,11,4,6,7,10,8,4,11,5,1,1,1,5,5,6,7,9,8,11,4,6,7,10,8,4,11,5,1,1,1,5,5,6,7,9,8,11]
     
-    var graphPoints:[Int] = [4,6,7,10,8,4,11,5,1,1,1,5,5,6,7,9,8,11]
+    var dayMap:[Int:[Int]] = [1:[1,2,3],2:[1,3,4],3:[1,2,3],4:[1,3,4],5:[1,2,3],6:[1,3,4]]
     
     @IBInspectable var borderColor: UIColor = UIColor.clearColor() {
         didSet{
@@ -28,18 +29,23 @@ import UIKit
             layer.cornerRadius = cornerRadius
         }
     }
+    
+    var numberOfDivisions: Int {
+        get {
+            return 30 //dayMap.keys.array.count
+        }
+    }
+    
     @IBInspectable var startColor: UIColor = UIColor.redColor()
     @IBInspectable var endColor: UIColor = UIColor.greenColor()
     
-    
-    
-    
     override func drawRect(rect: CGRect) {
+        print(numberOfDivisions)
         let width = rect.width
         let height = rect.height
         var path = UIBezierPath(roundedRect: rect, byRoundingCorners: UIRectCorner.AllCorners, cornerRadii: CGSize(width: 8.0, height: 8.0))
         path.addClip()
-
+        
         let context = UIGraphicsGetCurrentContext()
         let colors = [startColor.CGColor, endColor.CGColor]
         let colorSpace = CGColorSpaceCreateDeviceRGB()
@@ -107,45 +113,18 @@ import UIKit
             let circle = UIBezierPath(ovalInRect: CGRect(origin: point, size: CGSize(width: 5.0, height: 5.0)))
             circle.fill()
         }
-        
         var linePath = UIBezierPath()
         
-        for i in 0..<graphPoints.count{
-            linePath.moveToPoint(CGPoint(x:columnXPoint(i), y: 0))
-            linePath.addLineToPoint(CGPoint(x:columnXPoint(i), y: height))
-            let color = UIColor(white: 1.0, alpha: 0.1)
+        //To draw horizontal divisions
+        for i in 0..<numberOfDivisions {
+            linePath.moveToPoint(CGPoint(x:(CGFloat(i) * (width/CGFloat(numberOfDivisions))), y: 0))
+            linePath.addLineToPoint(CGPoint(x:(CGFloat(i) * (width/CGFloat(numberOfDivisions))), y: height))
+            let color = UIColor(white: 1.0, alpha: 0.4)
             color.setStroke()
             linePath.lineWidth = 1.0
             linePath.stroke()
         }
 
-//
-//        //Draw horizontal graph lines on the top of everything
-//        var linePath = UIBezierPath()
-//        
-//        //top line
-//        linePath.moveToPoint(CGPoint(x:margin, y: topBorder))
-//        linePath.addLineToPoint(CGPoint(x: width - margin,
-//            y:topBorder))
-//        
-//        //center line
-//        linePath.moveToPoint(CGPoint(x:margin,
-//            y: graphHeight/2 + topBorder))
-//        linePath.addLineToPoint(CGPoint(x:width - margin,
-//            y:graphHeight/2 + topBorder))
-//        
-//        //bottom line
-//        linePath.moveToPoint(CGPoint(x:margin,
-//            y:height - bottomBorder))
-//        linePath.addLineToPoint(CGPoint(x:width - margin,
-//            y:height - bottomBorder))
-//        let color = UIColor(white: 1.0, alpha: 0.3)
-//        color.setStroke()
-//        
-//        linePath.lineWidth = 1.0
-//        linePath.stroke()
-    }
 
+ }
 }
-
-

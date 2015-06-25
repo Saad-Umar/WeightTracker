@@ -14,12 +14,8 @@
 		2DCD4A201B39F6B100C11868 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2DCD4A1F1B39F6B100C11868 /* Images.xcassets */; };
 		2DCD4A231B39F6B100C11868 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DCD4A211B39F6B100C11868 /* LaunchScreen.xib */; };
 		2DCD4A2F1B39F6B100C11868 /* GraphTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DCD4A2E1B39F6B100C11868 /* GraphTestTests.swift */; };
-		2DCD4A421B39F76800C11868 /* MyCustomView.h in Headers */ = {isa = PBXBuildFile; fileRef = 2DCD4A411B39F76800C11868 /* MyCustomView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2DCD4A481B39F76900C11868 /* MyCustomView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DCD4A3D1B39F76800C11868 /* MyCustomView.framework */; };
 		2DCD4A511B39F76900C11868 /* MyCustomViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DCD4A501B39F76900C11868 /* MyCustomViewTests.swift */; };
-		2DCD4A541B39F76900C11868 /* MyCustomView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DCD4A3D1B39F76800C11868 /* MyCustomView.framework */; };
-		2DCD4A551B39F76900C11868 /* MyCustomView.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2DCD4A3D1B39F76800C11868 /* MyCustomView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		2DCD4A601B39F7AB00C11868 /* MyCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DCD4A5F1B39F7AB00C11868 /* MyCustomView.swift */; };
+		2DD1F6161B3B856800BDF300 /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD1F6151B3B856800BDF300 /* GraphView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,26 +26,12 @@
 			remoteGlobalIDString = 2DCD4A0F1B39F6B000C11868;
 			remoteInfo = GraphTest;
 		};
-		2DCD4A491B39F76900C11868 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 2DCD4A081B39F6B000C11868 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 2DCD4A3C1B39F76800C11868;
-			remoteInfo = MyCustomView;
-		};
 		2DCD4A4B1B39F76900C11868 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 2DCD4A081B39F6B000C11868 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 2DCD4A0F1B39F6B000C11868;
 			remoteInfo = GraphTest;
-		};
-		2DCD4A521B39F76900C11868 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 2DCD4A081B39F6B000C11868 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 2DCD4A3C1B39F76800C11868;
-			remoteInfo = MyCustomView;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -60,7 +42,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				2DCD4A551B39F76900C11868 /* MyCustomView.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -79,13 +60,10 @@
 		2DCD4A281B39F6B100C11868 /* GraphTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GraphTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DCD4A2D1B39F6B100C11868 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2DCD4A2E1B39F6B100C11868 /* GraphTestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphTestTests.swift; sourceTree = "<group>"; };
-		2DCD4A3D1B39F76800C11868 /* MyCustomView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MyCustomView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		2DCD4A401B39F76800C11868 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2DCD4A411B39F76800C11868 /* MyCustomView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyCustomView.h; sourceTree = "<group>"; };
 		2DCD4A471B39F76900C11868 /* MyCustomViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyCustomViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DCD4A4F1B39F76900C11868 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2DCD4A501B39F76900C11868 /* MyCustomViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCustomViewTests.swift; sourceTree = "<group>"; };
-		2DCD4A5F1B39F7AB00C11868 /* MyCustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCustomView.swift; sourceTree = "<group>"; };
+		2DD1F6151B3B856800BDF300 /* GraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,7 +71,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2DCD4A541B39F76900C11868 /* MyCustomView.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,18 +81,10 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2DCD4A391B39F76800C11868 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		2DCD4A441B39F76900C11868 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2DCD4A481B39F76900C11868 /* MyCustomView.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -127,7 +96,6 @@
 			children = (
 				2DCD4A121B39F6B000C11868 /* GraphTest */,
 				2DCD4A2B1B39F6B100C11868 /* GraphTestTests */,
-				2DCD4A3E1B39F76800C11868 /* MyCustomView */,
 				2DCD4A4D1B39F76900C11868 /* MyCustomViewTests */,
 				2DCD4A111B39F6B000C11868 /* Products */,
 			);
@@ -138,7 +106,6 @@
 			children = (
 				2DCD4A101B39F6B000C11868 /* GraphTest.app */,
 				2DCD4A281B39F6B100C11868 /* GraphTestTests.xctest */,
-				2DCD4A3D1B39F76800C11868 /* MyCustomView.framework */,
 				2DCD4A471B39F76900C11868 /* MyCustomViewTests.xctest */,
 			);
 			name = Products;
@@ -150,6 +117,7 @@
 				2DCD4A151B39F6B000C11868 /* AppDelegate.swift */,
 				2DCD4A1A1B39F6B000C11868 /* ViewController.swift */,
 				2DCD4A1C1B39F6B100C11868 /* Main.storyboard */,
+				2DD1F6151B3B856800BDF300 /* GraphView.swift */,
 				2DCD4A1F1B39F6B100C11868 /* Images.xcassets */,
 				2DCD4A211B39F6B100C11868 /* LaunchScreen.xib */,
 				2DCD4A171B39F6B000C11868 /* GraphTest.xcdatamodeld */,
@@ -183,24 +151,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		2DCD4A3E1B39F76800C11868 /* MyCustomView */ = {
-			isa = PBXGroup;
-			children = (
-				2DCD4A411B39F76800C11868 /* MyCustomView.h */,
-				2DCD4A5F1B39F7AB00C11868 /* MyCustomView.swift */,
-				2DCD4A3F1B39F76800C11868 /* Supporting Files */,
-			);
-			path = MyCustomView;
-			sourceTree = "<group>";
-		};
-		2DCD4A3F1B39F76800C11868 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				2DCD4A401B39F76800C11868 /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 		2DCD4A4D1B39F76900C11868 /* MyCustomViewTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -220,17 +170,6 @@
 		};
 /* End PBXGroup section */
 
-/* Begin PBXHeadersBuildPhase section */
-		2DCD4A3A1B39F76800C11868 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				2DCD4A421B39F76800C11868 /* MyCustomView.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXHeadersBuildPhase section */
-
 /* Begin PBXNativeTarget section */
 		2DCD4A0F1B39F6B000C11868 /* GraphTest */ = {
 			isa = PBXNativeTarget;
@@ -244,7 +183,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				2DCD4A531B39F76900C11868 /* PBXTargetDependency */,
 			);
 			name = GraphTest;
 			productName = GraphTest;
@@ -269,24 +207,6 @@
 			productReference = 2DCD4A281B39F6B100C11868 /* GraphTestTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		2DCD4A3C1B39F76800C11868 /* MyCustomView */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 2DCD4A561B39F76900C11868 /* Build configuration list for PBXNativeTarget "MyCustomView" */;
-			buildPhases = (
-				2DCD4A381B39F76800C11868 /* Sources */,
-				2DCD4A391B39F76800C11868 /* Frameworks */,
-				2DCD4A3A1B39F76800C11868 /* Headers */,
-				2DCD4A3B1B39F76800C11868 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = MyCustomView;
-			productName = MyCustomView;
-			productReference = 2DCD4A3D1B39F76800C11868 /* MyCustomView.framework */;
-			productType = "com.apple.product-type.framework";
-		};
 		2DCD4A461B39F76900C11868 /* MyCustomViewTests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2DCD4A5A1B39F76900C11868 /* Build configuration list for PBXNativeTarget "MyCustomViewTests" */;
@@ -298,7 +218,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				2DCD4A4A1B39F76900C11868 /* PBXTargetDependency */,
 				2DCD4A4C1B39F76900C11868 /* PBXTargetDependency */,
 			);
 			name = MyCustomViewTests;
@@ -322,9 +241,6 @@
 						CreatedOnToolsVersion = 6.2;
 						TestTargetID = 2DCD4A0F1B39F6B000C11868;
 					};
-					2DCD4A3C1B39F76800C11868 = {
-						CreatedOnToolsVersion = 6.2;
-					};
 					2DCD4A461B39F76900C11868 = {
 						CreatedOnToolsVersion = 6.2;
 						TestTargetID = 2DCD4A0F1B39F6B000C11868;
@@ -346,7 +262,6 @@
 			targets = (
 				2DCD4A0F1B39F6B000C11868 /* GraphTest */,
 				2DCD4A271B39F6B100C11868 /* GraphTestTests */,
-				2DCD4A3C1B39F76800C11868 /* MyCustomView */,
 				2DCD4A461B39F76900C11868 /* MyCustomViewTests */,
 			);
 		};
@@ -370,13 +285,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2DCD4A3B1B39F76800C11868 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		2DCD4A451B39F76900C11868 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -394,6 +302,7 @@
 				2DCD4A1B1B39F6B000C11868 /* ViewController.swift in Sources */,
 				2DCD4A191B39F6B000C11868 /* GraphTest.xcdatamodeld in Sources */,
 				2DCD4A161B39F6B000C11868 /* AppDelegate.swift in Sources */,
+				2DD1F6161B3B856800BDF300 /* GraphView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -402,14 +311,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				2DCD4A2F1B39F6B100C11868 /* GraphTestTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		2DCD4A381B39F76800C11868 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				2DCD4A601B39F7AB00C11868 /* MyCustomView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -429,20 +330,10 @@
 			target = 2DCD4A0F1B39F6B000C11868 /* GraphTest */;
 			targetProxy = 2DCD4A291B39F6B100C11868 /* PBXContainerItemProxy */;
 		};
-		2DCD4A4A1B39F76900C11868 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 2DCD4A3C1B39F76800C11868 /* MyCustomView */;
-			targetProxy = 2DCD4A491B39F76900C11868 /* PBXContainerItemProxy */;
-		};
 		2DCD4A4C1B39F76900C11868 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 2DCD4A0F1B39F6B000C11868 /* GraphTest */;
 			targetProxy = 2DCD4A4B1B39F76900C11868 /* PBXContainerItemProxy */;
-		};
-		2DCD4A531B39F76900C11868 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 2DCD4A3C1B39F76800C11868 /* MyCustomView */;
-			targetProxy = 2DCD4A521B39F76900C11868 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -597,51 +488,6 @@
 			};
 			name = Release;
 		};
-		2DCD4A571B39F76900C11868 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = MyCustomView/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		2DCD4A581B39F76900C11868 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = MyCustomView/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 		2DCD4A5B1B39F76900C11868 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -693,6 +539,7 @@
 				2DCD4A341B39F6B100C11868 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2DCD4A351B39F6B100C11868 /* Build configuration list for PBXNativeTarget "GraphTestTests" */ = {
 			isa = XCConfigurationList;
@@ -701,14 +548,7 @@
 				2DCD4A371B39F6B100C11868 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-		};
-		2DCD4A561B39F76900C11868 /* Build configuration list for PBXNativeTarget "MyCustomView" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				2DCD4A571B39F76900C11868 /* Debug */,
-				2DCD4A581B39F76900C11868 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2DCD4A5A1B39F76900C11868 /* Build configuration list for PBXNativeTarget "MyCustomViewTests" */ = {
 			isa = XCConfigurationList;
@@ -717,6 +557,7 @@
 				2DCD4A5C1B39F76900C11868 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
