@@ -8,10 +8,11 @@
 
 import UIKit
 
-class GraphView: UIView {
-    var graphPoints:[Int] = [4,6,7,10,8,4,11,5,1,1,1,5,5,66,77,9,8,11,4,6,7,10,8,44,11,5,1,1,1,5,5,6,7,9,8,11,4,6,7,10,8,4,11,5,1,1,1,5,5,6,7,9,8,11,4,6,7,10,8,4,11,5,1,1,1,5,5,6,7,9,8,11,4,6,7,10,8,4,11,5,1,1,1,5,5,66,77,9,8,11,4,6,7,10,8,44,11,5,1,1,1,5,5,6,7,9,8,11,4,6,7,10,8,4,11,5,1,1,1,5,5,6,7,9,8,11,4,6,7,10,8,4,11,5,1,1,1,5,5,6,7,9,8,11]
+@IBDesignable class GraphView: UIView {
     
-    var dayMap:[Int:[Int]] = [1:[1,2,3],2:[1,3,4],3:[1,2,3],4:[1,3,4],5:[1,2,3],6:[1,3,4]]
+    var graphPoints:[Int] = [1,2,3,2,0,5,1,2,3,2,0,5,1,2,3,2,0,5,1,2,3,2,0,5,1,2,3,2,0,5,1,2]
+    
+    
     
     @IBInspectable var borderColor: UIColor = UIColor.clearColor() {
         didSet{
@@ -32,7 +33,7 @@ class GraphView: UIView {
     
     var numberOfDivisions: Int {
         get {
-            return 30 //dayMap.keys.array.count
+            return 4 //dayMap.keys.array.count
         }
     }
     
@@ -43,6 +44,8 @@ class GraphView: UIView {
         print(numberOfDivisions)
         let width = rect.width
         let height = rect.height
+        
+        //To make the corners of the rect rounded
         var path = UIBezierPath(roundedRect: rect, byRoundingCorners: UIRectCorner.AllCorners, cornerRadii: CGSize(width: 8.0, height: 8.0))
         path.addClip()
         
@@ -58,9 +61,9 @@ class GraphView: UIView {
         
         //To calculate x coordinate
         
-        let margin:CGFloat = 20
+        let margin:CGFloat = 80
         var columnXPoint = {(column:Int)->CGFloat in
-            let space = (width-margin*2-4)/CGFloat((self.graphPoints.count-1))
+            let space = (width-margin*2-4)/30
             var x:CGFloat = CGFloat(column)*space
             x += margin + 2
             return x
@@ -84,13 +87,19 @@ class GraphView: UIView {
         //go to start of the line
         graphPath.moveToPoint(CGPoint(x: columnXPoint(0), y: columnYPoint(graphPoints[0])))
         //add points for each item in the graphPoints array
+        
         //at the crrect (x,y) for the point
         for i in 1..<graphPoints.count {
+            //If the weight for the given day is null
+            if graphPoints[i] == 0 {
+                continue
+            }
             let nextPoint = CGPoint(x: columnXPoint(i), y: columnYPoint(graphPoints[i]))
             graphPath.addLineToPoint(nextPoint)
         }
         graphPath.stroke()
         
+        //To save the unclipped state
         CGContextSaveGState(context)
         var clippingPath = graphPath.copy() as UIBezierPath
         clippingPath.addLineToPoint(CGPoint(x: columnXPoint(graphPoints.count-1), y: height))
@@ -104,9 +113,16 @@ class GraphView: UIView {
         CGContextDrawLinearGradient(context, gradient, startPoint, endPoint, 0)
         graphPath.lineWidth = 2.0
         graphPath.stroke()
+        
+        //Restoring to unclipped state
         CGContextRestoreGState(context)
         
+        //To draw the rounded tips
         for i in 0..<graphPoints.count {
+            //If the weight for the given day is null
+            if graphPoints[i] == 0 {
+                continue
+            }
             var point = CGPoint(x: columnXPoint(i), y: columnYPoint(graphPoints[i]))
             point.x -= 2.5
             point.y -= 2.5
@@ -115,10 +131,20 @@ class GraphView: UIView {
         }
         var linePath = UIBezierPath()
         
-        //To draw horizontal divisions
+        //To draw vertical divisions
         for i in 0..<numberOfDivisions {
-            linePath.moveToPoint(CGPoint(x:(CGFloat(i) * (width/CGFloat(numberOfDivisions))), y: 0))
-            linePath.addLineToPoint(CGPoint(x:(CGFloat(i) * (width/CGFloat(numberOfDivisions))), y: height))
+            linePath.moveToPoint(CGPoint(x:(CGFloat(i) * (width/CGFloat(numberOfDivisions+2)))+80, y: 0))
+            linePath.addLineToPoint(CGPoint(x:(CGFloat(i) * (width/CGFloat(numberOfDivisions+2)))+80, y: height-25))
+            let color = UIColor(white: 1.0, alpha: 0.4)
+            color.setStroke()
+            linePath.lineWidth = 1.0
+            linePath.stroke()
+        }
+        
+        //To draw horizontal divisions
+        for i in 0...12 {
+            linePath.moveToPoint(CGPoint(x: 80 , y: height - 25 - CGFloat(i*26)))
+            linePath.addLineToPoint(CGPoint(x:width, y: height - 25 - CGFloat(i*26)))
             let color = UIColor(white: 1.0, alpha: 0.4)
             color.setStroke()
             linePath.lineWidth = 1.0

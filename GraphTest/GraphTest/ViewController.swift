@@ -17,7 +17,6 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         println(NSDate())
         //graphView.dayMap = [1:[1,2,3]]
         //graphView.setNeedsDisplay()
