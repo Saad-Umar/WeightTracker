@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -16,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="leS-Rl-YT6" customClass="GraphView" customModule="GraphTest" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="leS-Rl-YT6" customClass="GraphView" customModule="GraphTest" customModuleProvider="target">
                                 <rect key="frame" x="64" y="242" width="496" height="336"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Week 1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rTu-AE-2X3">
@@ -103,8 +104,17 @@
                                         <color key="textColor" red="0.74117647060000003" green="0.74117647060000003" blue="0.76078431369999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" fixedFrame="YES" text="133" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h0V-8D-wba">
+                                        <rect key="frame" x="46" y="30" width="31" height="16"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="13"/>
+                                        <color key="textColor" red="0.74117647060000003" green="0.74117647060000003" blue="0.76078431369999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="336" id="FjX-KM-aTd"/>
+                                </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="startColor">
                                         <color key="value" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -114,11 +124,38 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wEg-HN-ppv">
+                                <rect key="frame" x="286" y="155" width="53" height="30"/>
+                                <state key="normal" title="Refresh">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="refresh:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="UgZ-9e-5dE"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="leS-Rl-YT6" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="48" id="AHU-ni-tli"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="leS-Rl-YT6" secondAttribute="bottom" constant="22" id="SgO-aL-8Fx"/>
+                            <constraint firstAttribute="centerX" secondItem="wEg-HN-ppv" secondAttribute="centerX" constant="-12" id="Trs-mQ-5jw"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="leS-Rl-YT6" secondAttribute="trailing" constant="24" id="aD0-cO-jJf"/>
+                            <constraint firstItem="leS-Rl-YT6" firstAttribute="top" secondItem="wEg-HN-ppv" secondAttribute="bottom" constant="57" id="dYM-8d-uaD"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="graphView" destination="leS-Rl-YT6" id="QWc-pO-gHv"/>
+                        <outletCollection property="weight" destination="AuA-FD-nmg" collectionClass="NSMutableArray" id="Wos-bS-Yy5"/>
+                        <outletCollection property="weight" destination="QPj-Gk-Bh4" collectionClass="NSMutableArray" id="5SR-aY-UI0"/>
+                        <outletCollection property="weight" destination="ndA-BG-YbM" collectionClass="NSMutableArray" id="1XB-Rx-U54"/>
+                        <outletCollection property="weight" destination="i48-yl-MeV" collectionClass="NSMutableArray" id="Icb-O3-2ra"/>
+                        <outletCollection property="weight" destination="EiU-CF-LRp" collectionClass="NSMutableArray" id="Su5-M9-e8X"/>
+                        <outletCollection property="weight" destination="sHW-06-i0T" collectionClass="NSMutableArray" id="QXj-UL-3Jq"/>
+                        <outletCollection property="weight" destination="I5W-G6-ewd" collectionClass="NSMutableArray" id="ymE-ls-6KN"/>
+                        <outletCollection property="weight" destination="oaE-mX-6KU" collectionClass="NSMutableArray" id="sEX-19-ZNQ"/>
+                        <outletCollection property="weight" destination="YR1-9a-q1d" collectionClass="NSMutableArray" id="bc2-Ln-a76"/>
+                        <outletCollection property="weight" destination="3KC-eH-vTQ" collectionClass="NSMutableArray" id="bOk-vN-lt9"/>
+                        <outletCollection property="weight" destination="h0V-8D-wba" collectionClass="NSMutableArray" id="aDA-qH-Cwm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>

@@ -41,6 +41,8 @@ import UIKit
     @IBInspectable var endColor: UIColor = UIColor.greenColor()
     
     override func drawRect(rect: CGRect) {
+   
+        
         print(numberOfDivisions)
         let width = rect.width
         let height = rect.height
@@ -48,8 +50,10 @@ import UIKit
         //To make the corners of the rect rounded
         var path = UIBezierPath(roundedRect: rect, byRoundingCorners: UIRectCorner.AllCorners, cornerRadii: CGSize(width: 8.0, height: 8.0))
         path.addClip()
+    
         
         let context = UIGraphicsGetCurrentContext()
+
         let colors = [startColor.CGColor, endColor.CGColor]
         let colorSpace = CGColorSpaceCreateDeviceRGB()
         let colorLocations:[CGFloat] = [0.0,1.0]
@@ -57,6 +61,7 @@ import UIKit
         var startPoint = CGPoint.zeroPoint
         var endPoint = CGPoint(x: 0, y: self.bounds.height)
         CGContextDrawLinearGradient(context, gradient, startPoint, endPoint, 0)
+      
         
         
         //To calculate x coordinate
@@ -97,11 +102,25 @@ import UIKit
             let nextPoint = CGPoint(x: columnXPoint(i), y: columnYPoint(graphPoints[i]))
             graphPath.addLineToPoint(nextPoint)
         }
+        let animatedPath = CAShapeLayer()
+        animatedPath.path = graphPath.CGPath
+        animatedPath.strokeColor = UIColor.whiteColor().CGColor
+        animatedPath.fillColor = UIColor.clearColor().CGColor
+        animatedPath.lineWidth = 2.0
+        animatedPath.lineCap = kCALineCapRound
+        self.layer.addSublayer(animatedPath)
+        
+        let animateStrokeEnd = CABasicAnimation(keyPath: "strokeEnd")
+        animateStrokeEnd.duration = 10.0
+        animateStrokeEnd.fromValue = 0.0
+        animateStrokeEnd.toValue = 1.0
+        animatedPath.addAnimation(animateStrokeEnd, forKey: nil)
+        var clippingPath = graphPath.copy() as UIBezierPath
+        graphPath.removeAllPoints()
         graphPath.stroke()
         
         //To save the unclipped state
         CGContextSaveGState(context)
-        var clippingPath = graphPath.copy() as UIBezierPath
         clippingPath.addLineToPoint(CGPoint(x: columnXPoint(graphPoints.count-1), y: height))
         clippingPath.addLineToPoint(CGPoint(x: columnXPoint(0), y: height))
         clippingPath.closePath()
@@ -127,7 +146,20 @@ import UIKit
             point.x -= 2.5
             point.y -= 2.5
             let circle = UIBezierPath(ovalInRect: CGRect(origin: point, size: CGSize(width: 5.0, height: 5.0)))
-            circle.fill()
+            let animatedPoints = CAShapeLayer()
+            animatedPoints.path = circle.CGPath
+            animatedPoints.strokeColor = UIColor.whiteColor().CGColor
+            animatedPoints.fillColor = UIColor.whiteColor().CGColor
+            animatedPoints.lineWidth = 0.5
+            animatedPoints.lineCap = kCALineCapRound
+            self.layer.insertSublayer(animatedPoints, above: animatedPath)
+            
+            let animateStrokeEnd1 = CABasicAnimation(keyPath: "strokeEnd")
+            animateStrokeEnd1.duration = 5.0
+            animateStrokeEnd1.fromValue = 0.0
+            animateStrokeEnd1.toValue = 1.0
+            animatedPath.addAnimation(animateStrokeEnd1, forKey: nil)
+            //circle.fill()
         }
         var linePath = UIBezierPath()
         
@@ -150,7 +182,11 @@ import UIKit
             linePath.lineWidth = 1.0
             linePath.stroke()
         }
+        
+ 
 
 
- }
+ 
+    }
 }
+
